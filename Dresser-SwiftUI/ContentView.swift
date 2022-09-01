@@ -32,6 +32,7 @@ struct ContentView: View {
                                         }
                                     }, secondaryButton: .cancel() {
                                         self.toBeDeleted = nil
+                                        
                                     })
                                 }
                         } .onDelete(perform: deleteRow)
