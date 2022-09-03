@@ -13,39 +13,53 @@ struct ContentView: View {
     
     @State private var itemsTop = ["Tshirt", "Coat", "Blazer"]
     @State private var showingDeleteAlert = false
+    @State private var showingAddItem = false
     @State private var toBeDeleted: IndexSet?
+    @ObservedObject var itemList = Items()
     
     var body: some View {
         TabView{
             VStack{
                 NavigationView{
                     List{
-                        ForEach (itemsTop, id: \.self){ item in
-                            Text(item)
-                                .alert(isPresented: self.$showingDeleteAlert) {
-                                    Alert(title: Text("Are you sure"), message: Text("want to delete \(itemsTop[toBeDeleted!.first!])?"), primaryButton: .destructive(Text("Delete")) {
-                                        if let toBeDeletedSet:IndexSet = toBeDeleted {
-                                            for index in toBeDeletedSet {
-                                                itemsTop.remove(at: index)
-                                            }
-                                            self.toBeDeleted = nil
-                                        }
-                                    }, secondaryButton: .cancel() {
-                                        self.toBeDeleted = nil
-                                        
-                                    })
+                        ForEach (itemList.items){ item in
+                            NavigationLink(destination: ItemView(item: item)){
+                                HStack{
+                                    VStack{
+                                        Text(item.name)
+                                            .font(.headline.weight(.bold))
+                                        Text(item.brand)
+                                    }
+                                    Spacer()
+                                    Text(item.type)
                                 }
+                                
+                                    .alert(isPresented: self.$showingDeleteAlert) {
+                                        Alert(title: Text("Are you sure"), message: Text("want to delete \(itemsTop[toBeDeleted!.first!])?"), primaryButton: .destructive(Text("Delete")) {
+                                            if let toBeDeletedSet:IndexSet = toBeDeleted {
+                                                for index in toBeDeletedSet {
+                                                    itemList.items.remove(at: index)
+                                                }
+                                                self.toBeDeleted = nil
+                                            }
+                                        }, secondaryButton: .cancel() {
+                                            self.toBeDeleted = nil
+                                        })
+                                    }
+                            }
                         } .onDelete(perform: deleteRow)
                         
                     }
                     .listStyle(GroupedListStyle())
                     .navigationBarTitle("Garderob")
                     .navigationBarItems(trailing: Button(action: {
-                        print("Add button pressed")
-                        itemsTop.append("New Item")
+                        self.showingAddItem = true
                     }){
-                        Text("Add")
+                        Image(systemName: "plus")
                     })
+                    .sheet(isPresented: $showingAddItem){
+                        AddItem(items: self.itemList)
+                    }
                     
                 }
             }.tabItem{

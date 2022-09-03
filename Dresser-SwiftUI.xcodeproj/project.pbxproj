@@ -11,6 +11,9 @@
 		255AEE5528BDC9DC00AEE003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255AEE5428BDC9DC00AEE003 /* ContentView.swift */; };
 		255AEE5728BDC9DC00AEE003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255AEE5628BDC9DC00AEE003 /* Assets.xcassets */; };
 		255AEE5A28BDC9DC00AEE003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255AEE5928BDC9DC00AEE003 /* Preview Assets.xcassets */; };
+		25FFF5A628C36D1F0046C6EC /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FFF5A528C36D1F0046C6EC /* ItemView.swift */; };
+		25FFF5C428C3D8AD0046C6EC /* AddItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FFF5C328C3D8AD0046C6EC /* AddItem.swift */; };
+		25FFF5C628C3DA150046C6EC /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FFF5C528C3DA150046C6EC /* Items.swift */; };
 		887500E7F209F1CC8D392B23 /* Pods_Dresser_SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9BB10416CE8DC138FFECB3D /* Pods_Dresser_SwiftUI.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +23,9 @@
 		255AEE5428BDC9DC00AEE003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		255AEE5628BDC9DC00AEE003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		255AEE5928BDC9DC00AEE003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		25FFF5A528C36D1F0046C6EC /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		25FFF5C328C3D8AD0046C6EC /* AddItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItem.swift; sourceTree = "<group>"; };
+		25FFF5C528C3DA150046C6EC /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
 		5673DAFEA3521E186B103F42 /* Pods-Dresser-SwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dresser-SwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-Dresser-SwiftUI/Pods-Dresser-SwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
 		728A27FFD9A3C07F04F5F66C /* Pods-Dresser-SwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dresser-SwiftUI.release.xcconfig"; path = "Target Support Files/Pods-Dresser-SwiftUI/Pods-Dresser-SwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 		C9BB10416CE8DC138FFECB3D /* Pods_Dresser_SwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dresser_SwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,8 +66,11 @@
 			children = (
 				255AEE5228BDC9DC00AEE003 /* Dresser_SwiftUIApp.swift */,
 				255AEE5428BDC9DC00AEE003 /* ContentView.swift */,
+				25FFF5A528C36D1F0046C6EC /* ItemView.swift */,
+				25FFF5C328C3D8AD0046C6EC /* AddItem.swift */,
 				255AEE5628BDC9DC00AEE003 /* Assets.xcassets */,
 				255AEE5828BDC9DC00AEE003 /* Preview Content */,
+				25FFF5C528C3DA150046C6EC /* Items.swift */,
 			);
 			path = "Dresser-SwiftUI";
 			sourceTree = "<group>";
@@ -80,7 +89,6 @@
 				5673DAFEA3521E186B103F42 /* Pods-Dresser-SwiftUI.debug.xcconfig */,
 				728A27FFD9A3C07F04F5F66C /* Pods-Dresser-SwiftUI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,8 +214,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FFF5C428C3D8AD0046C6EC /* AddItem.swift in Sources */,
+				25FFF5C628C3DA150046C6EC /* Items.swift in Sources */,
 				255AEE5528BDC9DC00AEE003 /* ContentView.swift in Sources */,
 				255AEE5328BDC9DC00AEE003 /* Dresser_SwiftUIApp.swift in Sources */,
+				25FFF5A628C36D1F0046C6EC /* ItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
